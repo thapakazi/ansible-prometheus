@@ -1,0 +1,11 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+  roles:
+    - role: ansible-prometheus
+      vars:
+        prometheus_components:
+          - node_exporter
+        prometheus_node_exporter_version: 0.15.0
+        prometheus_node_exporter_opts: '--collector.ntp'
