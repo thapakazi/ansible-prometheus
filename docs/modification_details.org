@@ -1,0 +1,17 @@
+#+TITLE: modification details on the original play
+
+Since William seems busy, and node exporter lacking the systemd
+configs, I am making this fork.
+
+*Points to recall:*
+ * While running on system with old node_exporter configs, we would need to reload the systemd daemon, be sure you don't mess up with
+other side-effects while running it on db servers(check it once, notsure I am)
+
+ * jeos desing will include this play using ansible-galaxy like:
+   - [[http://docs.ansible.com/ansible/latest/galaxy.html#version][Eg]]; you can mention the REVISION(git commit hash) if you want to
+be explicity about it, else just use the git url.
+     #+BEGIN_EXAMPLE
+     ansible-galaxy install git+https://github.com:thapakazi/ansible-prometheus.git,REVISION
+     #+END_EXAMPLE
+
+
